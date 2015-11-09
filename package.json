@@ -1,0 +1,39 @@
+{
+  "name": "linter-glsl",
+  "main": "./lib/linter-glsl",
+  "version": "0.0.0",
+  "description": "Adds linting for GLSL shaders.",
+  "repository": "https://github.com/andystanton/linter-glsl",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-linter": "^2.0.5",
+    "atom-package-deps": "^2.0.1",
+    "language-glsl": "^2.0.1"
+  },
+  "packages-deps": [
+    "linter"
+  ],
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "globals": {
+      "atom": true
+    }
+  }
+}
