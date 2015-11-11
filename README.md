@@ -30,3 +30,7 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
  * [x] Add Atom package that uses glslangValidator to lint GLSL files named ```*.(vert|frag)```.
  * [ ] Add ability to lint ```*.(v|f).glsl``` files.
  * [ ] Add ability to link vertex and fragment shaders with the same root name within the current project.
+
+## Acknowledgements
+
+I used [linter-clang](https://github.com/AtomLinter/linter-clang/) as a reference for interacting with the atom-linter package, styling, and how to write specs for Atom.
