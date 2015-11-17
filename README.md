@@ -2,7 +2,7 @@
 
 linter-glsl is a package for the Atom editor that lints GLSL shaders on the fly.
 
-It uses the Khronos GLSL Validator which is part of the [GL Shading Language reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) as well as the [language-glsl](https://atom.io/packages/language-glsl) Atom package.
+It uses the Khronos GLSL Validator which is part of the [GL Shading Language reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) as well as the [language-glsl](https://atom.io/packages/language-glsl/) and [linter](https://atom.io/packages/linter/) Atom packages.
 
 It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/autocomplete-glsl).
 
