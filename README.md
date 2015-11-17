@@ -1,8 +1,8 @@
 # linter-glsl
 
-linter-glsl is a package for the Atom editor that lints GLSL shaders.
+linter-glsl is a package for the Atom editor that lints GLSL shaders on the fly.
 
-It uses the Khronos GLSL Validator which is part of the [GL Shading Language reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) as well as the [language-glsl](https://atom.io/packages/language-glsl) Atom package.
+It uses the Khronos GLSL Validator which is part of the [GL Shading Language reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) as well as the [language-glsl](https://atom.io/packages/language-glsl/) and [linter](https://atom.io/packages/linter/) Atom packages.
 
 It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/autocomplete-glsl).
 
@@ -11,16 +11,17 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 ## Requirements
 
  * [glslangValidator](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/)
- * [language-glsl](https://atom.io/packages/language-glsl)
+ * [language-glsl](https://atom.io/packages/language-glsl/)
+ * [linter](https://atom.io/packages/linter/)
  * Shaders must be named ```*.(vert|frag)```
 
 ## Installation
 
 1. Install [glslangValidator](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/)
-2. Install [language-glsl](https://atom.io/packages/language-glsl) and [linter-glsl](https://atom.io/packages/linter-glsl), either through 'Install Packages And Themes' or with apm:
+2. Install [linter](https://atom.io/packages/linter/), [language-glsl](https://atom.io/packages/language-glsl/) and [linter-glsl](https://atom.io/packages/linter-glsl/), either through 'Install Packages And Themes' or with apm:
 
    ```sh
-   $ apm install language-glsl linter-glsl
+   $ apm install linter language-glsl linter-glsl
    ```
 3. Configure the path to glslangValidator in preferences.
 4. Lint!
@@ -33,4 +34,5 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 
 ## Acknowledgements
 
-I used [linter-clang](https://github.com/AtomLinter/linter-clang/) as a reference for interacting with the atom-linter package, styling, and how to write specs for Atom.
+ * [linter-clang](https://github.com/AtomLinter/linter-clang/) was used as a reference for interacting with the atom-linter package, styling, and how to write specs for Atom.
+ * [linter-haml](https://github.com/AtomLinter/linter-haml/) was used as a reference for how to create temporary directories and files so that linting can be performed on the fly.
