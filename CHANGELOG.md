@@ -1,4 +1,4 @@
-## Unreleased
+## 1.0.2
  * Add linting on the fly.
  * Drop path from default glslangValidator location.
  * Add linter installation to readme.
