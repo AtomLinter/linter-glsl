@@ -1,4 +1,4 @@
-## Unreleased
+## 1.0.3
  * Add linting of all file patterns covered in glsl grammar scopes.
  * Add fixtures for all file patterns covered in glsl grammar scopes.
  * Add spec for geometry shaders.
