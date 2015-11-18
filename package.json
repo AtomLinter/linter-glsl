@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "atom-linter": "^2.0.5",
+    "atom-message-panel": "^1.2.4",
     "atom-package-deps": "^2.0.1",
     "fs-extra": "^0.22.1",
     "language-glsl": "^2.0.1",
+    "node-whereis": "^0.0.1",
     "temp": "^0.8.3"
   },
   "packages-deps": [
