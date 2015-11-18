@@ -13,7 +13,6 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
  * [glslangValidator](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/)
  * [language-glsl](https://atom.io/packages/language-glsl/)
  * [linter](https://atom.io/packages/linter/)
- * Shaders must be named ```*.(vert|frag)```
 
 ## Installation
 
@@ -28,8 +27,8 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 
 ## Todo
 
- * [x] Add Atom package that uses glslangValidator to lint GLSL files named ```*.(vert|frag)```.
- * [ ] Add ability to lint ```*.(v|f).glsl``` files.
+ * [x] Add Atom package that uses glslangValidator to lint GLSL files named ```*.(vert|frag|geom)```.
+ * [x] Add ability to lint ```*.(v|f|g).glsl``` files.
  * [ ] Add ability to link vertex and fragment shaders with the same root name within the current project.
 
 ## Acknowledgements
