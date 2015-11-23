@@ -1,4 +1,4 @@
 #version 110
-void not_main() {
+void main() {
   gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 }
