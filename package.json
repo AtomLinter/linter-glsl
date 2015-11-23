@@ -22,8 +22,7 @@
     "fs-extra": "^0.22.1",
     "language-glsl": "^2.0.1",
     "node-whereis": "^0.0.1",
-    "temp": "^0.8.3",
-    "xregexp": "^3.0.0"
+    "temp": "^0.8.3"
   },
   "packages-deps": [
     "linter"
