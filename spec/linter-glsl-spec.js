@@ -44,6 +44,7 @@ describe('linter-glsl', () => {
 
   it('links multiple shaders together', () => {
     waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}linking${path.sep}test.vert`).then((editor) => {
+      atom.config.set("linter-glsl.linkSimilarShaders", true)
       lint(editor).then((messages) => {
         expect(messages.length).toEqual(2);
         expect(messages[0].type).toEqual("ERROR");
