@@ -1,5 +1,7 @@
 "use babel";
 
+path = require('path');
+
 describe('linter-glsl', () => {
   const lint = require('../lib/linter-glsl').provideLinter().lint;
 
@@ -41,7 +43,7 @@ describe('linter-glsl', () => {
   // Linking test
 
   it('links multiple shaders together', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/linking/test.vert').then((editor) => {
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}linking${path.sep}test.vert`).then((editor) => {
       lint(editor).then((messages) => {
         expect(messages.length).toEqual(2);
         expect(messages[0].type).toEqual("ERROR");
@@ -55,102 +57,102 @@ describe('linter-glsl', () => {
   // Vertex shaders
 
   it('finds two errors in "test.vert"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test.vert').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vert`).then(vLint))
   });
 
   it('finds two errors in "test.v.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test.v.glsl').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.v.glsl`).then(vLint))
   });
 
   it('finds two errors in "test.vs.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test.vs.glsl').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vs.glsl`).then(vLint))
   });
 
   it('finds two errors in "test_v.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test_v.glsl').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test_v.glsl`).then(vLint))
   });
 
   it('finds two errors in "test_vs.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test_vs.glsl').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test_vs.glsl`).then(vLint))
   });
 
   it('finds two errors in "test.vs"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test.vs').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vs`).then(vLint))
   });
 
   it('finds two errors in "test.vsh"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test.vsh').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vsh`).then(vLint))
   });
 
   it('finds two errors in "test.vshader"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/vert/test.vshader').then(vLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vshader`).then(vLint))
   });
 
   // Fragment shaders
 
   it('finds two errors in "test.frag"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test.frag').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.frag`).then(fLint))
   })
 
   it('finds two errors in "test.f.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test.f.glsl').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.f.glsl`).then(fLint))
   })
 
   it('finds two errors in "test.fs.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test.fs.glsl').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.fs.glsl`).then(fLint))
   })
 
   it('finds two errors in "test_f.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test_f.glsl').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test_f.glsl`).then(fLint))
   })
 
   it('finds two errors in "test_fs.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test_fs.glsl').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test_fs.glsl`).then(fLint))
   })
 
   it('finds two errors in "test.fs"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test.fs').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.fs`).then(fLint))
   })
 
   it('finds two errors in "test.fsh"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test.fsh').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.fsh`).then(fLint))
   })
 
   it('finds two errors in "test.fshader"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/frag/test.fshader').then(fLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.fshader`).then(fLint))
   })
 
   // Geometry shaders
 
   it('finds two errors in "test.geom"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test.geom').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.geom`).then(gLint))
   })
 
   it('finds two errors in "test.g.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test.g.glsl').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.g.glsl`).then(gLint))
   })
 
   it('finds two errors in "test.gs.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test.gs.glsl').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.gs.glsl`).then(gLint))
   })
 
   it('finds two errors in "test_g.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test_g.glsl').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test_g.glsl`).then(gLint))
   })
 
   it('finds two errors in "test_gs.glsl"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test_gs.glsl').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test_gs.glsl`).then(gLint))
   })
 
   it('finds two errors in "test.gs"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test.gs').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.gs`).then(gLint))
   })
 
   it('finds two errors in "test.gsh"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test.gsh').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.gsh`).then(gLint))
   })
 
   it('finds two errors in "test.gshader"', () => {
-    waitsForPromise(() => atom.workspace.open(__dirname + '/fixtures/geom/test.gshader').then(gLint))
+    waitsForPromise(() => atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.gshader`).then(gLint))
   })
 });
