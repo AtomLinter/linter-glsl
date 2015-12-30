@@ -16,10 +16,10 @@
     }
   },
   "dependencies": {
-    "atom-linter": "^2.0.5",
+    "atom-linter": "^4.2.0",
     "atom-message-panel": "^1.2.4",
-    "atom-package-deps": "^2.0.1",
-    "fs-extra": "^0.22.1",
+    "atom-package-deps": "^3.0.6",
+    "fs-extra": "^0.26.3",
     "language-glsl": "^2.0.1",
     "node-whereis": "^0.0.1",
     "temp": "^0.8.3"
