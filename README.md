@@ -6,7 +6,7 @@ It uses the Khronos GLSL Validator which is part of the [GL Shading Language ref
 
 It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/autocomplete-glsl).
 
-![](https://andystanton.github.io/linter-glsl/images/linter-glsl-1.0.0.png)
+![](https://atomlinter.github.io/linter-glsl/images/linter-glsl-1.0.0.png)
 
 ## Requirements
 

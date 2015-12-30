@@ -1,3 +1,7 @@
+## 1.0.6
+ * Migrate to AtomLinter organisation.
+ * Add CI integrations.
+
 ## 1.0.5
  * Add ability to link shader files with similar names as part of linting.
 
