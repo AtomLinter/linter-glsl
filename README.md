@@ -1,5 +1,9 @@
 # linter-glsl
 
+[![Circle CI Status](https://img.shields.io/circleci/project/AtomLinter/linter-glsl/master.svg?style=flat-square&label=linux)](https://circleci.com/gh/AtomLinter/linter-glsl)
+[![Travis CI Status](https://img.shields.io/travis/AtomLinter/linter-glsl/master.svg?style=flat-square&label=os%20x)](https://travis-ci.org/AtomLinter/linter-glsl)
+[![AppVeyor Status](https://img.shields.io/appveyor/ci/andystanton/linter-glsl-g9y85/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/andystanton/linter-glsl-3ymif)
+
 linter-glsl is a package for the Atom editor that lints GLSL shaders on the fly.
 
 It uses the Khronos GLSL Validator which is part of the [GL Shading Language reference compiler](https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/) as well as the [language-glsl](https://atom.io/packages/language-glsl/) and [linter](https://atom.io/packages/linter/) Atom packages.
