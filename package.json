@@ -3,7 +3,7 @@
   "main": "./lib/linter-glsl",
   "version": "1.0.5",
   "description": "Adds linting for GLSL shaders.",
-  "repository": "https://github.com/andystanton/linter-glsl",
+  "repository": "https://github.com/AtomLinter/linter-glsl",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
