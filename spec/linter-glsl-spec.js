@@ -1,6 +1,4 @@
-"use babel";
-
-path = require('path');
+var path = require('path');
 
 describe('linter-glsl', () => {
   const lint = require('../lib/linter-glsl').provideLinter().lint;
