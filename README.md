@@ -2,7 +2,7 @@
 
 [![Circle CI Status](https://img.shields.io/circleci/project/AtomLinter/linter-glsl/master.svg?style=flat-square&label=linux)](https://circleci.com/gh/AtomLinter/linter-glsl)
 [![Travis CI Status](https://img.shields.io/travis/AtomLinter/linter-glsl/master.svg?style=flat-square&label=os%20x)](https://travis-ci.org/AtomLinter/linter-glsl)
-[![AppVeyor Status](https://img.shields.io/appveyor/ci/andystanton/linter-glsl-g9y85/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/andystanton/linter-glsl-3ymif)
+[![AppVeyor Status](https://img.shields.io/appveyor/ci/andystanton/linter-glsl-g9y85/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/andystanton/linter-glsl-g9y85)
 
 linter-glsl is a package for the Atom editor that lints GLSL shaders on the fly.
 
