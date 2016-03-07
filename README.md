@@ -29,6 +29,18 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 3. Configure the path to glslangValidator in preferences.
 4. Lint!
 
+## Supported Filename formats
+
+| Vertex     | Fragment   | Geometry   | Tessellation Control | Tessellation Evaluation | Compute    |
+| ---------- | ---------- | ---------- | -------------------- | ----------------------- | ---------- |
+| `.vert`    | `.frag`    | `.geom`    | `.tesc`              | `.tese`                 | `.comp`    |
+| `.vs.glsl` | `.fs.glsl` | `.gs.glsl` | `.tc.glsl`           | `.te.glsl`              | `.cs.glsl` |
+| `_vs.glsl` | `_fs.glsl` | `_gs.glsl` | `_tc.glsl`           | `_te.glsl`              | `_cs.glsl` |
+| `.vs`      | `.gs`      | `.gs`      | `.tc`                | `.te`                   | `.cs`      |
+| `.v.glsl`  | `.f.glsl`  | `.g.glsl`  |                      |                         |            |
+| `_v.glsl`  | `_f.glsl`  | `_g.glsl`  |                      |                         |            |
+| `.vsh`     | `.fsh`     | `.gsh`     |                      |                         |            |
+
 ## Acknowledgements
 
  * [linter-clang](https://github.com/AtomLinter/linter-clang/) was used as a reference for interacting with the atom-linter package, styling, and how to write specs for Atom.
