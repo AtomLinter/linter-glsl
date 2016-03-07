@@ -57,7 +57,7 @@ describe('linter-glsl', () => {
 
   it('links multiple shaders together', () => {
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}linking${path.sep}test.vert`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "linking", "sample.vert"))
       .then(editor => {
         atom.config.set("linter-glsl.linkSimilarShaders", true)
         lint(editor)
@@ -73,104 +73,179 @@ describe('linter-glsl', () => {
 
   // Vertex shaders
 
-  it('finds two errors in "test.vert"', _ => {
+  it('finds two errors in "sample.vert"', _ => {
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vert`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample.vert"))
       .then(runLintTest(vsTest)));
   });
 
-  it('finds two errors in "test.vs.glsl"', _ =>
+  it('finds two errors in "sample.vs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vs.glsl`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample.vs.glsl"))
       .then(runLintTest(vsTest))));
 
-  it('finds two errors in "test.vs"', _ =>
+  it('finds two errors in "sample_vs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}vert${path.sep}test.vs`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample_vs.glsl"))
+      .then(runLintTest(vsTest))));
+
+  it('finds two errors in "sample.vs"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample.vs"))
+      .then(runLintTest(vsTest))));
+
+  it('finds two errors in "sample.v.glsl"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample.v.glsl"))
+      .then(runLintTest(vsTest))));
+
+  it('finds two errors in "sample_v.glsl"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample_v.glsl"))
+      .then(runLintTest(vsTest))));
+
+  it('finds two errors in "sample.vsh"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "vert", "sample.vsh"))
       .then(runLintTest(vsTest))));
 
   // Fragment shaders
 
-  it('finds two errors in "test.frag"', _ =>
+  it('finds two errors in "sample.frag"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.frag`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample.frag"))
       .then(runLintTest(fsTest))));
 
-  it('finds two errors in "test.fs.glsl"', _ =>
+  it('finds two errors in "sample.fs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.fs.glsl`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample.fs.glsl"))
       .then(runLintTest(fsTest))));
 
-  it('finds two errors in "test.fs"', _ =>
+  it('finds two errors in "sample_fs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}frag${path.sep}test.fs`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample_fs.glsl"))
+      .then(runLintTest(fsTest))));
+
+  it('finds two errors in "sample.fs"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample.fs"))
+      .then(runLintTest(fsTest))));
+
+  it('finds two errors in "sample.f.glsl"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample.f.glsl"))
+      .then(runLintTest(fsTest))));
+
+  it('finds two errors in "sample_f.glsl"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample_f.glsl"))
+      .then(runLintTest(fsTest))));
+
+  it('finds two errors in "sample.fsh"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "frag", "sample.fsh"))
       .then(runLintTest(fsTest))));
 
   // Geometry shaders
 
-  it('finds two errors in "test.geom"', _ =>
+  it('finds two errors in "sample.geom"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.geom`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample.geom"))
       .then(runLintTest(gsTest))));
 
-  it('finds two errors in "test.gs.glsl"', _ =>
+  it('finds two errors in "sample.gs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.gs.glsl`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample.gs.glsl"))
       .then(runLintTest(gsTest))));
 
-  it('finds two errors in "test.gs"', _ =>
+  it('finds two errors in "sample_gs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}geom${path.sep}test.gs`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample_gs.glsl"))
+      .then(runLintTest(gsTest))));
+
+  it('finds two errors in "sample.gs"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample.gs"))
+      .then(runLintTest(gsTest))));
+
+  it('finds two errors in "sample.g.glsl"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample.g.glsl"))
+      .then(runLintTest(gsTest))));
+
+  it('finds two errors in "sample_g.glsl"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample_g.glsl"))
+      .then(runLintTest(gsTest))));
+
+  it('finds two errors in "sample.gsh"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "geom", "sample.gsh"))
       .then(runLintTest(gsTest))));
 
   // Tessellation Control shaders
 
-  it('finds two errors in "test.tesc"', _ =>
+  it('finds two errors in "sample.tesc"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}tesc${path.sep}test.tesc`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "tesc", "sample.tesc"))
       .then(runLintTest(tcTest))));
 
-  it('finds two errors in "test.tc.glsl"', _ =>
+  it('finds two errors in "sample.tc.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}tesc${path.sep}test.tc.glsl`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "tesc", "sample.tc.glsl"))
       .then(runLintTest(tcTest))));
 
-  it('finds two errors in "test.tc"', _ =>
+  it('finds two errors in "sample_tc.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}tesc${path.sep}test.tc`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "tesc", "sample_tc.glsl"))
+      .then(runLintTest(tcTest))));
+
+  it('finds two errors in "sample.tc"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "tesc", "sample.tc"))
       .then(runLintTest(tcTest))));
 
   // Tessellation Evaluation shaders
 
-  it('finds two errors in "test.tese"', _ =>
+  it('finds two errors in "sample.tese"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}tese${path.sep}test.tese`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "tese", "sample.tese"))
       .then(runLintTest(teTest))));
 
-  it('finds two errors in "test.te.glsl"', _ =>
+  it('finds two errors in "sample.te.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}tese${path.sep}test.te.glsl`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "tese", "sample.te.glsl"))
       .then(runLintTest(teTest))));
 
-  it('finds two errors in "test.te"', _ =>
+  it('finds two errors in "sample_te.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}tese${path.sep}test.te`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "tese", "sample_te.glsl"))
+      .then(runLintTest(teTest))));
+
+  it('finds two errors in "sample.te"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "tese", "sample.te"))
       .then(runLintTest(teTest))));
 
   // Compute shaders
 
-  it('finds two errors in "test.comp"', _ =>
+  it('finds two errors in "sample.comp"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}comp${path.sep}test.comp`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "comp", "sample.comp"))
       .then(runLintTest(csTest))));
 
-  it('finds two errors in "test.cs.glsl"', _ =>
+  it('finds two errors in "sample.cs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}comp${path.sep}test.cs.glsl`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "comp", "sample.cs.glsl"))
       .then(runLintTest(csTest))));
 
-  it('finds two errors in "test.cs"', _ =>
+  it('finds two errors in "sample_cs.glsl"', _ =>
     waitsForPromise(() =>
-      atom.workspace.open(__dirname + `${path.sep}fixtures${path.sep}comp${path.sep}test.cs`)
+      atom.workspace.open(path.join(__dirname, "fixtures", "comp", "sample_cs.glsl"))
+      .then(runLintTest(csTest))));
+
+  it('finds two errors in "sample.cs"', _ =>
+    waitsForPromise(() =>
+      atom.workspace.open(path.join(__dirname, "fixtures", "comp", "sample.cs"))
       .then(runLintTest(csTest))));
 });
