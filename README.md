@@ -10,7 +10,7 @@ It uses the Khronos GLSL Validator which is part of the [GL Shading Language ref
 
 It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/autocomplete-glsl).
 
-![](screenshot.png)
+![](https://github.com/AtomLinter/linter-glsl/raw/master/screenshot.png)
 
 ## Requirements
 
