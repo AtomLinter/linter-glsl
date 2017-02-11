@@ -1,18 +1,34 @@
 dependencies:
+  cache_directories:
+    - ~/cmake-3.6.2-Linux-x86_64
   pre:
     # Force updating wget due to the current containers being too out of date
     - sudo apt-get update
-    - sudo apt-get install wget
+    - sudo apt-get install wget git
   override:
     - wget -O atom-amd64.deb https://atom.io/download/deb
     # - sudo apt-get update # Cut out until wget is fixed on the containers
     - sudo dpkg --install atom-amd64.deb || true
     - sudo apt-get -f install
-    - sudo apt-get -f install ppa-purge
-    - sudo ppa-purge ppa:ubuntu-toolchain-r/test -y
     - apm install
-    - curl -o /home/ubuntu/bin/glslangValidator https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Linux/glslangValidator
-    - chmod +x /home/ubuntu/bin/glslangValidator
+    - >
+      if [ ! -d ~/cmake-3.6.2-Linux-x86_64 ]; then
+        echo "No cache - building CMake"
+        cd ~ && wget --quiet https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.tar.gz && tar -xvf cmake-3.6.2-Linux-x86_64.tar.gz
+      else
+        echo "Cached CMake found"
+      fi
+    - >
+      if [ ! -d ~/glslangValidator ]; then
+        echo "No cache - building glslangValidator"
+        cd ~ && git clone https://github.com/KhronosGroup/glslang.git glslangValidator
+        cd glslangValidator
+        mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..
+        make
+        make install
+      else
+        echo "Cached glslangValidator found"
+      fi
 test:
   override:
     - atom -v
