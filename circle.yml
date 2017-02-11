@@ -26,6 +26,7 @@ dependencies:
         mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..
         make
         make install
+        cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
       else
         echo "Cached glslangValidator found"
       fi
