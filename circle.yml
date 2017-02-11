@@ -7,6 +7,7 @@ dependencies:
     - wget -O atom-amd64.deb https://atom.io/download/deb
     # - sudo apt-get update # Cut out until wget is fixed on the containers
     - sudo dpkg --install atom-amd64.deb || true
+    - sudo apt-get -f install
     - sudo apt-get -f install ppa-purge
     - sudo ppa-purge ppa:ubuntu-toolchain-r/test
     - apm install
