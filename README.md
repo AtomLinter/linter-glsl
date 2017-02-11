@@ -41,6 +41,10 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 | `_v.glsl`  | `_f.glsl`  | `_g.glsl`  |                      |                         |            |
 | `.vsh`     | `.fsh`     | `.gsh`     |                      |                         |            |
 
+## Developing
+
+The glslangValidator tool is in development, and the released Windows and Linux versions appear to be built from a development branch rather than tags. This makes linting its output something of a moving target. This, combined with the fact that there is now official MacOS release has made consistent testing across the three main platforms hard. Currently glslangValidator master is used for the Travis build which targets MacOS. If you're developing on a Mac and want to run the unit tests, see `.travis.yml` for an example of how to get this.
+
 ## Acknowledgements
 
  * [linter-clang](https://github.com/AtomLinter/linter-clang/) was used as a reference for interacting with the atom-linter package, styling, and how to write specs for Atom.
