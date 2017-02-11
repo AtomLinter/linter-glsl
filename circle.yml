@@ -9,7 +9,7 @@ dependencies:
     - sudo dpkg --install atom-amd64.deb || true
     - sudo apt-get -f install
     - sudo apt-get -f install ppa-purge
-    - sudo ppa-purge ppa:ubuntu-toolchain-r/test
+    - sudo ppa-purge ppa:ubuntu-toolchain-r/test -y
     - apm install
     - curl -o /home/ubuntu/bin/glslangValidator https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Linux/glslangValidator
     - chmod +x /home/ubuntu/bin/glslangValidator
