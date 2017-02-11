@@ -14,21 +14,25 @@ describe('linter-glsl', () => {
     expect(messages[0].type).toEqual("ERROR");
     expect(messages[0].text).toEqual("'main' : illegal use of type 'void'");
     expect(messages[1].type).toEqual("ERROR");
-    expect(messages[1].text).toEqual("'' :  syntax error");
+    expect(messages[1].text).toEqual("'' : compilation terminated");
   };
 
   const fsTest = messages => {
-    expect(messages.length).toEqual(2);
+    expect(messages.length).toEqual(3);
     expect(messages[0].type).toEqual("ERROR");
     expect(messages[0].text).toEqual("'vec5' : no matching overloaded function found");
     expect(messages[1].type).toEqual("ERROR");
     expect(messages[1].text).toEqual("'assign' :  cannot convert from 'const float' to 'fragColor 4-component vector of float FragColor'");
+    expect(messages[2].type).toEqual("ERROR");
+    expect(messages[2].text).toEqual("'' : compilation terminated");
   };
 
   const gsTest = messages => {
-    expect(messages.length).toEqual(1);
+    expect(messages.length).toEqual(2);
     expect(messages[0].type).toEqual("ERROR");
     expect(messages[0].text).toEqual("'line_stripp' : unrecognized layout identifier, or qualifier requires assignment (e.g., binding = 4)");
+    expect(messages[1].type).toEqual("ERROR");
+    expect(messages[1].text).toEqual("'' : compilation terminated");
   };
 
   const tcTest = messages => {
@@ -36,7 +40,7 @@ describe('linter-glsl', () => {
     expect(messages[0].type).toEqual("ERROR");
     expect(messages[0].text).toEqual("'verticaes' : there is no such layout identifier for this stage taking an assigned value");
     expect(messages[1].type).toEqual("ERROR");
-    expect(messages[1].text).toEqual("'' :  syntax error");
+    expect(messages[1].text).toEqual("'' : compilation terminated");
   };
 
   const teTest = messages => {
@@ -46,27 +50,29 @@ describe('linter-glsl', () => {
   };
 
   const csTest = messages => {
-    expect(messages.length).toEqual(1);
+    expect(messages.length).toEqual(2);
     expect(messages[0].type).toEqual("ERROR");
     expect(messages[0].text).toEqual("'' : image variables not declared 'writeonly' must have a format layout qualifier");
+    expect(messages[1].type).toEqual("ERROR");
+    expect(messages[1].text).toEqual("'compute shaders' : required extension not requested: GL_ARB_compute_shader");
   };
 
   const runLintTest = shaderTest => editor => lint(editor).then(shaderTest);
 
   // Linking test
 
-  it('links multiple shaders together', () => {
+  it('links multiple shaders together when there are linker errors', () => {
     waitsForPromise(() =>
       atom.workspace.open(path.join(__dirname, "fixtures", "linking", "sample.vert"))
       .then(editor => {
         atom.config.set("linter-glsl.linkSimilarShaders", true)
-        lint(editor)
+        return lint(editor)
           .then(messages => {
             expect(messages.length).toEqual(2);
             expect(messages[0].type).toEqual("ERROR");
-            expect(messages[0].text).toEqual("Missing entry point: Each stage requires one \"void main()\" entry point");
+            expect(messages[0].text).toEqual("Missing entry point: Each stage requires one entry point");
             expect(messages[1].type).toEqual("ERROR");
-            expect(messages[1].text).toEqual("Missing entry point: Each stage requires one \"void main()\" entry point");
+            expect(messages[1].text).toEqual("Missing entry point: Each stage requires one entry point");
           });
       }));
   });
