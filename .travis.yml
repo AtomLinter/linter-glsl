@@ -10,5 +10,5 @@ notifications:
     on_failure: change
 os: osx
 install:
-  - brew update && brew install andystanton/homebrew-formula/glslang --HEAD
+  - brew update && brew install glslang --HEAD
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
