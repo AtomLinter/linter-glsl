@@ -1,5 +1,18 @@
 # Change Log
 
+## [v2.1.1](https://github.com/AtomLinter/linter-glsl/tree/v2.1.1) (2017-02-13)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.0...v2.1.1)
+
+**Implemented enhancements:**
+
+- Update atom-linter to the latest version 🚀 [\#50](https://github.com/AtomLinter/linter-glsl/pull/50) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Switch custom tap to official homebrew now PR is merged [\#49](https://github.com/AtomLinter/linter-glsl/pull/49) ([andystanton](https://github.com/andystanton))
+- Update dependencies to enable Greenkeeper 🌴 [\#45](https://github.com/AtomLinter/linter-glsl/pull/45) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
+**Fixed bugs:**
+
+- Failed to activate the linter-glsl package [\#26](https://github.com/AtomLinter/linter-glsl/issues/26)
+
 ## [v2.1.0](https://github.com/AtomLinter/linter-glsl/tree/v2.1.0) (2017-02-11)
 [Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.5...v2.1.0)
 
