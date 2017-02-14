@@ -1,27 +1,126 @@
-## 1.0.6
- * Migrate to AtomLinter organisation.
- * Add CI integrations.
+# Change Log
 
-## 1.0.5
- * Add ability to link shader files with similar names as part of linting.
+## [v2.1.0](https://github.com/AtomLinter/linter-glsl/tree/v2.1.0) (2017-02-11)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.5...v2.1.0)
 
-## 1.0.4
-  * Add linting of all file patterns covered in glsl grammar scopes.
-  * Add fixtures for all file patterns covered in glsl grammar scopes.
-  * Add spec for geometry shaders.
-  * Add observer for glslangValidatorPath change events.
-  * Check glslangValidatorPath exists and is executable on change.
+**Implemented enhancements:**
 
-## 1.0.3
-  * Rolled back release due to bug.
+- bump linter to 8.0.0 [\#48](https://github.com/AtomLinter/linter-glsl/pull/48) ([andystanton](https://github.com/andystanton))
+- Update atom-linter to version 7.0.0 🚀 [\#37](https://github.com/AtomLinter/linter-glsl/pull/37) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 
-## 1.0.2
-  * Add linting on the fly.
-  * Drop path from default glslangValidator location.
-  * Add linter installation to readme.
+**Fixed bugs:**
 
-## 1.0.1
-  * Add missing acknowledgements.
+- Fix package-deps typo \(and everything else\) [\#47](https://github.com/AtomLinter/linter-glsl/pull/47) ([andystanton](https://github.com/andystanton))
 
-## 1.0.0
-  * Add GLSL Linting via glslangValidator.
+## [v2.0.5](https://github.com/AtomLinter/linter-glsl/tree/v2.0.5) (2016-06-23)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.4...v2.0.5)
+
+**Implemented enhancements:**
+
+- Update atom-linter to version 6.0.0 🚀 [\#36](https://github.com/AtomLinter/linter-glsl/pull/36) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v2.0.4](https://github.com/AtomLinter/linter-glsl/tree/v2.0.4) (2016-06-23)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.3...v2.0.4)
+
+**Implemented enhancements:**
+
+- Update atom-linter to version 5.0.2 🚀 [\#35](https://github.com/AtomLinter/linter-glsl/pull/35) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v2.0.3](https://github.com/AtomLinter/linter-glsl/tree/v2.0.3) (2016-05-21)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.2...v2.0.3)
+
+**Fixed bugs:**
+
+- Uncaught TypeError: path.basename is not a function [\#29](https://github.com/AtomLinter/linter-glsl/issues/29)
+- Switchout whereis with more recently maintained which library [\#34](https://github.com/AtomLinter/linter-glsl/pull/34) ([andystanton](https://github.com/andystanton))
+
+## [v2.0.2](https://github.com/AtomLinter/linter-glsl/tree/v2.0.2) (2016-05-03)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.1...v2.0.2)
+
+**Implemented enhancements:**
+
+- fsh and vsh are unrecognised [\#24](https://github.com/AtomLinter/linter-glsl/issues/24)
+
+**Fixed bugs:**
+
+- Require dependencies before doing anything else [\#30](https://github.com/AtomLinter/linter-glsl/pull/30) ([andystanton](https://github.com/andystanton))
+
+## [v2.0.1](https://github.com/AtomLinter/linter-glsl/tree/v2.0.1) (2016-03-07)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.0.0...v2.0.1)
+
+**Implemented enhancements:**
+
+- Add support for unofficial glsl name formats [\#25](https://github.com/AtomLinter/linter-glsl/pull/25) ([andystanton](https://github.com/andystanton))
+
+## [v2.0.0](https://github.com/AtomLinter/linter-glsl/tree/v2.0.0) (2016-03-06)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.6...v2.0.0)
+
+**Implemented enhancements:**
+
+- Use helper module for temp files [\#14](https://github.com/AtomLinter/linter-glsl/issues/14)
+- Add support for tessellation control, tessellation evaluation and compute shader [\#23](https://github.com/AtomLinter/linter-glsl/pull/23) ([StailGot](https://github.com/StailGot))
+- Update atom-package-deps to version 4.0.1 🚀 [\#21](https://github.com/AtomLinter/linter-glsl/pull/21) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Remove unnecessary dependencies [\#19](https://github.com/AtomLinter/linter-glsl/pull/19) ([andystanton](https://github.com/andystanton))
+- Use tempFiles function from atom-linter helpers [\#18](https://github.com/AtomLinter/linter-glsl/pull/18) ([andystanton](https://github.com/andystanton))
+- Small cleanup [\#17](https://github.com/AtomLinter/linter-glsl/pull/17) ([andystanton](https://github.com/andystanton))
+- chore\(package\): update atom-package-deps to version 3.0.7 [\#16](https://github.com/AtomLinter/linter-glsl/pull/16) ([andystanton](https://github.com/andystanton))
+- chore\(package\): update atom-linter to version 4.3.0 [\#15](https://github.com/AtomLinter/linter-glsl/pull/15) ([andystanton](https://github.com/andystanton))
+- Update all dependencies 🌴 [\#13](https://github.com/AtomLinter/linter-glsl/pull/13) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Fixed bugs:**
+
+- Uncaught Error: spawn EACCES [\#9](https://github.com/AtomLinter/linter-glsl/issues/9)
+
+## [v1.0.6](https://github.com/AtomLinter/linter-glsl/tree/v1.0.6) (2015-12-30)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.5...v1.0.6)
+
+**Implemented enhancements:**
+
+- Add Circle CI and AppVeyor integration [\#11](https://github.com/AtomLinter/linter-glsl/pull/11) ([andystanton](https://github.com/andystanton))
+- add .travis.yml [\#10](https://github.com/AtomLinter/linter-glsl/pull/10) ([andystanton](https://github.com/andystanton))
+
+**Fixed bugs:**
+
+- Change repository refs to AtomLinter [\#12](https://github.com/AtomLinter/linter-glsl/pull/12) ([andystanton](https://github.com/andystanton))
+
+## [v1.0.5](https://github.com/AtomLinter/linter-glsl/tree/v1.0.5) (2015-12-01)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.4...v1.0.5)
+
+**Implemented enhancements:**
+
+- Remove absolute path [\#2](https://github.com/AtomLinter/linter-glsl/issues/2)
+- Lint on the fly [\#1](https://github.com/AtomLinter/linter-glsl/issues/1)
+- Feature/linking [\#7](https://github.com/AtomLinter/linter-glsl/pull/7) ([andystanton](https://github.com/andystanton))
+
+**Fixed bugs:**
+
+- Can't find glslValidator.exe [\#6](https://github.com/AtomLinter/linter-glsl/issues/6)
+
+## [v1.0.4](https://github.com/AtomLinter/linter-glsl/tree/v1.0.4) (2015-11-19)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.3...v1.0.4)
+
+## [v1.0.3](https://github.com/AtomLinter/linter-glsl/tree/v1.0.3) (2015-11-19)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.2...v1.0.3)
+
+**Implemented enhancements:**
+
+- Feature/lint all in glsl grammar [\#5](https://github.com/AtomLinter/linter-glsl/pull/5) ([andystanton](https://github.com/andystanton))
+
+## [v1.0.2](https://github.com/AtomLinter/linter-glsl/tree/v1.0.2) (2015-11-17)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.1...v1.0.2)
+
+**Implemented enhancements:**
+
+- Feature/lint on the fly [\#3](https://github.com/AtomLinter/linter-glsl/pull/3) ([andystanton](https://github.com/andystanton))
+
+**Fixed bugs:**
+
+- Drop path from default glslangValidator location \#2 [\#4](https://github.com/AtomLinter/linter-glsl/pull/4) ([andystanton](https://github.com/andystanton))
+
+## [v1.0.1](https://github.com/AtomLinter/linter-glsl/tree/v1.0.1) (2015-11-11)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v1.0.0...v1.0.1)
+
+## [v1.0.0](https://github.com/AtomLinter/linter-glsl/tree/v1.0.0) (2015-11-10)
+
+
+\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
