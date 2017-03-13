@@ -9,24 +9,23 @@ dependencies:
     # Ensure CMake is available
     - >
       if [ ! -d ~/cmake-3.6.2-Linux-x86_64 ]; then
-        echo "No cache - building CMake"
-        cd ~ && wget --quiet https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.tar.gz && tar -xvf cmake-3.6.2-Linux-x86_64.tar.gz
+        echo "No cache - building CMake";
+        cd ~ && wget --quiet https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.tar.gz && tar -xvf cmake-3.6.2-Linux-x86_64.tar.gz;
       else
-        echo "Cached CMake found"
+        echo "Cached CMake found";
       fi
     # Install glslangValidator
     - >
       if [ ! -d ~/glslangValidator ]; then
-        echo "No cache - building glslangValidator"
-        cd ~ && git clone --depth 1 https://github.com/KhronosGroup/glslang.git glslangValidator
-        cd glslangValidator
-        mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..
-        make
-        make install
-        cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
-      else
-        echo "Cached glslangValidator found"
-      fi
+        echo "No cache - downloading glslangValidator";
+        cd ~ && git clone --depth 1 https://github.com/KhronosGroup/glslang.git glslangValidator;
+      fi;
+      cd ~/glslangValidator;
+      git pull;
+      mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..;
+      make;
+      make install;
+      cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
 test:
   override:
     - ./build-package.sh
