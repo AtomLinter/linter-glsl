@@ -2,16 +2,11 @@ dependencies:
   cache_directories:
     - ~/cmake-3.6.2-Linux-x86_64
     - ~/glslangValidator
-  pre:
-    # Force updating wget due to the current containers being too out of date
-    - sudo apt-get update
-    - sudo apt-get install wget git
   override:
-    - wget -O atom-amd64.deb https://atom.io/download/deb
-    # - sudo apt-get update # Cut out until wget is fixed on the containers
-    - sudo dpkg --install atom-amd64.deb || true
-    - sudo apt-get -f install
-    - apm install
+    # Grab the Atom CI script and make executable
+    - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+    - chmod u+x build-package.sh
+    # Ensure CMake is available
     - >
       if [ ! -d ~/cmake-3.6.2-Linux-x86_64 ]; then
         echo "No cache - building CMake"
@@ -19,6 +14,7 @@ dependencies:
       else
         echo "Cached CMake found"
       fi
+    # Install glslangValidator
     - >
       if [ ! -d ~/glslangValidator ]; then
         echo "No cache - building glslangValidator"
@@ -33,6 +29,4 @@ dependencies:
       fi
 test:
   override:
-    - atom -v
-    - apm -v
-    - apm test
+    - ./build-package.sh
