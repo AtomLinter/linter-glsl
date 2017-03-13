@@ -20,3 +20,4 @@ build_script:
   - apm clean
   - apm install
   - apm test
+  - glslangValidator -v

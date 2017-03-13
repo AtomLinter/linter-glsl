@@ -28,4 +28,5 @@ dependencies:
       cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
 test:
   override:
+    - glslangValidator -v
     - ./build-package.sh
