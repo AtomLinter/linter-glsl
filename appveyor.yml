@@ -1,23 +1,26 @@
-version: "{build}"
-os: Windows Server 2012 R2
-branches:
-  only:
-    - master
-test: off
-deploy: off
-
+### Project specific config ###
 install:
   - mkdir -p %LOCALAPPDATA%\glslangValidator
   - appveyor DownloadFile https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Windows/glslangValidator.exe -FileName %LOCALAPPDATA%\glslangValidator\glslangValidator.exe
-  - appveyor DownloadFile https://atom.io/download/windows -FileName AtomSetup.exe
-  - AtomSetup.exe /silent
+
+environment:
+  matrix:
+  - ATOM_CHANNEL: stable
+  - ATOM_CHANNEL: beta
 
 build_script:
-  - cd %APPVEYOR_BUILD_FOLDER%
-  - SET PATH=%LOCALAPPDATA%\atom\bin;%LOCALAPPDATA%\glslangValidator;%PATH%
-  - atom -v
-  - apm -v
-  - apm clean
-  - apm install
-  - apm test
+  - SET PATH=%LOCALAPPDATA%\glslangValidator;%PATH%
   - glslangValidator -v
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/atom/ci/master/build-package.ps1'))
+
+### Generic setup follows ###
+branches:
+  only:
+    - master
+
+version: "{build}"
+platform: x64
+clone_depth: 10
+skip_tags: true
+test: off
+deploy: off
