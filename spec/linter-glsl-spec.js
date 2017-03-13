@@ -52,7 +52,7 @@ describe('linter-glsl', () => {
   const csTest = messages => {
     expect(messages.length).toEqual(2);
     expect(messages[0].type).toEqual("ERROR");
-    expect(messages[0].text).toEqual("'' : image variables not declared 'writeonly' must have a format layout qualifier");
+    expect(messages[0].text).toEqual("'image variables declared 'writeonly' without a format layout qualifier' : not supported for this version or the enabled extensions");
     expect(messages[1].type).toEqual("ERROR");
     expect(messages[1].text).toEqual("'compute shaders' : required extension not requested: GL_ARB_compute_shader");
   };
