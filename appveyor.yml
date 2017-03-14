@@ -1,22 +1,44 @@
-version: "{build}"
-os: Windows Server 2012 R2
+### Project specific config ###
+cache:
+  - C:\projects\deps\glslangValidator -> appveyor.yml
+
+install:
+  # Install CMake
+  - set CMAKE_URL="https://cmake.org/files/v3.6/cmake-3.6.2-win64-x64.zip"
+  - appveyor DownloadFile %CMAKE_URL% -FileName cmake-win64-x64.zip
+  - 7z x cmake-win64-x64.zip -oC:\projects\deps > nul
+  - move C:\projects\deps\cmake-* C:\projects\deps\cmake
+  - set PATH=C:\projects\deps\cmake\bin;%PATH%
+  - cmake --version
+  # - cinst cmake
+
+  # Install glslangValidator
+  - if not exist C:\projects\deps\glslangValidator git clone --depth 1 https://github.com/KhronosGroup/glslang.git C:\projects\deps\glslangValidator
+  - ps: cd C:\projects\deps\glslangValidator; git pull
+  - mkdir C:\projects\deps\glslangValidator\build
+  - ps: cd C:\projects\deps\glslangValidator\build
+  - ps: cmake C:\projects\deps\glslangValidator
+  - ps: cmake --build C:\projects\deps\glslangValidator\build --config Release --target install
+  - set PATH=C:\projects\deps\glslangValidator\build\install\bin;%PATH%
+
+environment:
+  matrix:
+  - ATOM_CHANNEL: stable
+  - ATOM_CHANNEL: beta
+
+build_script:
+  - SET PATH=%LOCALAPPDATA%\glslangValidator;%PATH%
+  - glslangValidator -v
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/atom/ci/master/build-package.ps1'))
+
+### Generic setup follows ###
 branches:
   only:
     - master
+
+version: "{build}"
+platform: x64
+clone_depth: 10
+skip_tags: true
 test: off
 deploy: off
-
-install:
-  - mkdir -p %LOCALAPPDATA%\glslangValidator
-  - appveyor DownloadFile https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Windows/glslangValidator.exe -FileName %LOCALAPPDATA%\glslangValidator\glslangValidator.exe
-  - appveyor DownloadFile https://atom.io/download/windows -FileName AtomSetup.exe
-  - AtomSetup.exe /silent
-
-build_script:
-  - cd %APPVEYOR_BUILD_FOLDER%
-  - SET PATH=%LOCALAPPDATA%\atom\bin;%LOCALAPPDATA%\glslangValidator;%PATH%
-  - atom -v
-  - apm -v
-  - apm clean
-  - apm install
-  - apm test

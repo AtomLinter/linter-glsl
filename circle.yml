@@ -1,37 +1,33 @@
 dependencies:
   cache_directories:
     - ~/cmake-3.6.2-Linux-x86_64
-  pre:
-    # Force updating wget due to the current containers being too out of date
-    - sudo apt-get update
-    - sudo apt-get install wget git
+    - ~/glslangValidator
   override:
-    - wget -O atom-amd64.deb https://atom.io/download/deb
-    # - sudo apt-get update # Cut out until wget is fixed on the containers
-    - sudo dpkg --install atom-amd64.deb || true
-    - sudo apt-get -f install
-    - apm install
+    # Grab the Atom CI script and make executable
+    - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+    - chmod u+x build-package.sh
+    # Ensure CMake is available
     - >
       if [ ! -d ~/cmake-3.6.2-Linux-x86_64 ]; then
-        echo "No cache - building CMake"
-        cd ~ && wget --quiet https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.tar.gz && tar -xvf cmake-3.6.2-Linux-x86_64.tar.gz
+        echo "No cache - building CMake";
+        cd ~ && wget --quiet https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.tar.gz && tar -xvf cmake-3.6.2-Linux-x86_64.tar.gz;
       else
-        echo "Cached CMake found"
-      fi
+        echo "Cached CMake found";
+      fi;
+      cmake --version
+    # Install glslangValidator
     - >
       if [ ! -d ~/glslangValidator ]; then
-        echo "No cache - building glslangValidator"
-        cd ~ && git clone https://github.com/KhronosGroup/glslang.git glslangValidator
-        cd glslangValidator
-        mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..
-        make
-        make install
-        cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
-      else
-        echo "Cached glslangValidator found"
-      fi
+        echo "No cache - downloading glslangValidator";
+        cd ~ && git clone --depth 1 https://github.com/KhronosGroup/glslang.git glslangValidator;
+      fi;
+      cd ~/glslangValidator;
+      git pull;
+      mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..;
+      make;
+      make install;
+      cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
 test:
   override:
-    - atom -v
-    - apm -v
-    - apm test
+    - glslangValidator -v
+    - ./build-package.sh
