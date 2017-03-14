@@ -21,6 +21,31 @@
     "atom-package-deps": "^4.3.1",
     "which": "^1.2.12"
   },
+  "devDependencies": {
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "global-require": "off",
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "node": true
+    }
+  },
   "package-deps": [
     "linter"
   ]
