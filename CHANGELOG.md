@@ -1,6 +1,20 @@
 # Change Log
 
-## [v2.1.1](https://github.com/AtomLinter/linter-glsl/tree/v2.1.1) (2017-02-13)
+## [v2.1.2](https://github.com/AtomLinter/linter-glsl/tree/v2.1.2) (2017-03-14)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.1...v2.1.2)
+
+**Implemented enhancements:**
+
+- Add ESLint configuration [\#55](https://github.com/AtomLinter/linter-glsl/pull/55) ([Arcanemagus](https://github.com/Arcanemagus))
+- Fix specs, update CI, and fix Atom Beta [\#54](https://github.com/AtomLinter/linter-glsl/pull/54) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Fixed bugs:**
+
+- Cannot set property 'subscriptions' of undefined \(after updating to Atom 1.16.0-beta0\) [\#53](https://github.com/AtomLinter/linter-glsl/issues/53)
+- Fix AppVeyor caching [\#56](https://github.com/AtomLinter/linter-glsl/pull/56) ([Arcanemagus](https://github.com/Arcanemagus))
+- Fix specs, update CI, and fix Atom Beta [\#54](https://github.com/AtomLinter/linter-glsl/pull/54) ([Arcanemagus](https://github.com/Arcanemagus))
+
+## [v2.1.1](https://github.com/AtomLinter/linter-glsl/tree/v2.1.1) (2017-02-14)
 [Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.0...v2.1.1)
 
 **Implemented enhancements:**
