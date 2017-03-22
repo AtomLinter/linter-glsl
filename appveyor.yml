@@ -14,7 +14,7 @@ install:
 
   # Install glslangValidator
   - if not exist C:\projects\deps\glslangValidator git clone --depth 1 https://github.com/KhronosGroup/glslang.git C:\projects\deps\glslangValidator
-  - ps: cd C:\projects\deps\glslangValidator; git pull
+  - ps: cd C:\projects\deps\glslangValidator; & cmd /c 'git pull 2>&1'
   - if not exist C:\projects\deps\glslangValidator\build mkdir C:\projects\deps\glslangValidator\build
   - ps: cd C:\projects\deps\glslangValidator\build
   - ps: cmake C:\projects\deps\glslangValidator
