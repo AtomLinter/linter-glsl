@@ -20,7 +20,7 @@ describe('linter-glsl', () => {
     expect(messages[0].type).toEqual('ERROR');
     expect(messages[0].text).toEqual("'vec5' : no matching overloaded function found");
     expect(messages[1].type).toEqual('ERROR');
-    expect(messages[1].text).toEqual("'assign' :  cannot convert from 'const float' to 'fragColor 4-component vector of float FragColor'");
+    expect(messages[1].text).toEqual("'assign' :  cannot convert from ' const float' to ' fragColor 4-component vector of float FragColor'");
     expect(messages[2].type).toEqual('ERROR');
     expect(messages[2].text).toEqual("'' : compilation terminated");
   };
