@@ -1,5 +1,14 @@
 # Change Log
 
+## [v2.1.3](https://github.com/AtomLinter/linter-glsl/tree/v2.1.3) (2017-03-23)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.2...v2.1.3)
+
+**Fixed bugs:**
+
+- Does not work with new linter [\#57](https://github.com/AtomLinter/linter-glsl/issues/57)
+- Return null on failure [\#61](https://github.com/AtomLinter/linter-glsl/pull/61) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update the specs for latest glsllangValidator [\#60](https://github.com/AtomLinter/linter-glsl/pull/60) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v2.1.2](https://github.com/AtomLinter/linter-glsl/tree/v2.1.2) (2017-03-14)
 [Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.1...v2.1.2)
 
