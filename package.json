@@ -19,6 +19,7 @@
     "atom-linter": "^10.0.0",
     "atom-message-panel": "^1.2.4",
     "atom-package-deps": "^4.3.1",
+    "glslify": "^6.0.2",
     "which": "^1.2.12"
   },
   "devDependencies": {
