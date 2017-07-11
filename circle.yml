@@ -14,7 +14,7 @@ dependencies:
       else
         echo "Cached CMake found";
       fi;
-      cmake --version
+      ~/cmake-3.6.2-Linux-x86_64/bin/cmake --version
     # Install glslangValidator
     - >
       if [ ! -d ~/glslangValidator ]; then
@@ -25,8 +25,7 @@ dependencies:
       git pull;
       mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..;
       make;
-      make install;
-      cp ~/glslangValidator/build/install/bin/glslangValidator ~/bin
+      cp ~/glslangValidator/build/StandAlone/glslangValidator ~/bin
 test:
   override:
     - glslangValidator -v
