@@ -25,7 +25,7 @@ dependencies:
       git pull;
       mkdir -p build && cd build && ~/cmake-3.6.2-Linux-x86_64/bin/cmake ..;
       make;
-      cp ~/glslangValidator/build/Standalone/glslangValidator ~/bin
+      cp ~/glslangValidator/build/StandAlone/glslangValidator ~/bin
 test:
   override:
     - glslangValidator -v

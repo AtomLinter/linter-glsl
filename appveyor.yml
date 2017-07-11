@@ -19,7 +19,7 @@ install:
   - ps: cd C:\projects\deps\glslangValidator\build
   - ps: cmake C:\projects\deps\glslangValidator
   - ps: cmake --build C:\projects\deps\glslangValidator\build --config Release --target install
-  - set PATH=C:\projects\deps\glslangValidator\build\install\bin;%PATH%
+  - set PATH=C:\projects\deps\glslangValidator\build\StandAlone;%PATH%
 
 environment:
   matrix:
