@@ -1,7 +1,6 @@
 # linter-glsl
 
 [![Circle CI Status](https://img.shields.io/circleci/project/AtomLinter/linter-glsl/master.svg?style=flat-square&label=linux)](https://circleci.com/gh/AtomLinter/linter-glsl)
-[![Travis CI Status](https://img.shields.io/travis/AtomLinter/linter-glsl/master.svg?style=flat-square&label=os%20x)](https://travis-ci.org/AtomLinter/linter-glsl)
 [![AppVeyor Status](https://img.shields.io/appveyor/ci/andystanton/linter-glsl-g9y85/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/andystanton/linter-glsl-g9y85)
 
 linter-glsl is a package for the Atom editor that lints GLSL shaders on the fly.
@@ -43,7 +42,7 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 
 ## Developing
 
-The glslangValidator tool is in development, and the released Windows and Linux versions appear to be built from a development branch rather than tags. This makes linting its output something of a moving target. This, combined with the fact that there is now official MacOS release has made consistent testing across the three main platforms hard. Currently glslangValidator master is used for the Travis build which targets MacOS. If you're developing on a Mac and want to run the unit tests, see `.travis.yml` for an example of how to get this.
+The glslangValidator tool is in development, and the released Windows and Linux versions appear to be built from a development branch rather than tags. This makes linting its output something of a moving target. This, combined with the fact that there is no official MacOS release has made consistent testing across the three main platforms hard.
 
 ## Acknowledgements
 
