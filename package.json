@@ -19,7 +19,9 @@
     "atom-linter": "^10.0.0",
     "atom-message-panel": "^1.2.4",
     "atom-package-deps": "^4.3.1",
+    "convert-source-map": "^1.5.0",
     "glslify": "https://github.com/fand/glslify#sourcemaps",
+    "source-map": "^0.5.6",
     "which": "^1.2.12"
   },
   "devDependencies": {
