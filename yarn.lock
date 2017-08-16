@@ -205,6 +205,10 @@ contains-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/contains-path/-/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
 
+convert-source-map@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.0.tgz#9acd70851c6d5dfdd93d9282e5edf94a03ff46b5"
+
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -758,6 +762,23 @@ glslify-bundle@^5.0.0:
     murmurhash-js "^1.0.0"
     shallow-copy "0.0.1"
 
+"glslify-bundle@https://github.com/fand/glslify-bundle#sourcemaps-test":
+  version "5.0.0"
+  resolved "https://github.com/fand/glslify-bundle#b503da0a9fe4549eaf8e0f55d14b174aabcddf45"
+  dependencies:
+    convert-source-map "^1.5.0"
+    glsl-inject-defines "^1.0.1"
+    glsl-token-defines "^1.0.0"
+    glsl-token-depth "^1.1.1"
+    glsl-token-descope "^1.0.2"
+    glsl-token-scope "^1.1.1"
+    glsl-token-string "^1.0.1"
+    glsl-token-whitespace-trim "^1.0.0"
+    glsl-tokenizer "^2.0.2"
+    murmurhash-js "^1.0.0"
+    shallow-copy "0.0.1"
+    source-map "^0.5.6"
+
 glslify-deps@^1.2.5:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/glslify-deps/-/glslify-deps-1.3.0.tgz#0b2234c8ea9e3d3fd7f6b3cb7f03ae59e6b51a59"
@@ -783,6 +804,27 @@ glslify@^6.0.2:
     glsl-resolve "0.0.1"
     glsl-token-whitespace-trim "^1.0.0"
     glslify-bundle "^5.0.0"
+    glslify-deps "^1.2.5"
+    minimist "^1.2.0"
+    resolve "^1.1.5"
+    stack-trace "0.0.9"
+    static-eval "^1.1.1"
+    tape "^4.6.0"
+    through2 "^2.0.1"
+    xtend "^4.0.0"
+
+"glslify@https://github.com/fand/glslify#sourcemaps":
+  version "6.1.0"
+  resolved "https://github.com/fand/glslify#6cec6e308985104ae35b54745d932beaae1c0d93"
+  dependencies:
+    bl "^1.0.0"
+    concat-stream "^1.5.2"
+    duplexify "^3.4.5"
+    falafel "^2.0.0"
+    from2 "^2.3.0"
+    glsl-resolve "0.0.1"
+    glsl-token-whitespace-trim "^1.0.0"
+    glslify-bundle "https://github.com/fand/glslify-bundle#sourcemaps-test"
     glslify-deps "^1.2.5"
     minimist "^1.2.0"
     resolve "^1.1.5"
@@ -1386,6 +1428,10 @@ shelljs@^0.7.5:
 slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
+
+source-map@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
 source-map@~0.2.0:
   version "0.2.0"
