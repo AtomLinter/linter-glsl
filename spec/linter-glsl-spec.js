@@ -1,7 +1,7 @@
 const path = require('path');
 
 describe('linter-glsl', () => {
-  const lint = require('../lib/linter-glsl').provideLinter().lint;
+  const { lint } = require('../lib/linter-glsl').provideLinter();
 
   beforeEach(() => {
     waitsForPromise(() => atom.packages.activatePackage('linter-glsl'));

@@ -15,6 +15,10 @@
       }
     }
   },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "apm test"
+  },
   "dependencies": {
     "atom-linter": "^10.0.0",
     "atom-message-panel": "^1.2.4",
