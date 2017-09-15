@@ -1,5 +1,19 @@
 # Change Log
 
+## [v2.1.4](https://github.com/AtomLinter/linter-glsl/tree/v2.1.4) (2017-09-14)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.3...v2.1.4)
+
+**Implemented enhancements:**
+
+- Asyncify the specs [\#70](https://github.com/AtomLinter/linter-glsl/pull/70) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update eslint-config-airbnb-base to version 12.0.0 🚀 [\#69](https://github.com/AtomLinter/linter-glsl/pull/69) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update eslint to version 4.3.0 🚀 [\#65](https://github.com/AtomLinter/linter-glsl/pull/65) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update atom-linter to version 10.0.0 🚀 [\#62](https://github.com/AtomLinter/linter-glsl/pull/62) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
+**Fixed bugs:**
+
+- Update circle ci config with latest glslang build [\#67](https://github.com/AtomLinter/linter-glsl/pull/67) ([andystanton](https://github.com/andystanton))
+
 ## [v2.1.3](https://github.com/AtomLinter/linter-glsl/tree/v2.1.3) (2017-03-23)
 [Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.2...v2.1.3)
 
@@ -28,9 +42,9 @@
 
 **Implemented enhancements:**
 
-- Update atom-linter to the latest version 🚀 [\#50](https://github.com/AtomLinter/linter-glsl/pull/50) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update atom-linter to version 9.0.0 🚀 [\#50](https://github.com/AtomLinter/linter-glsl/pull/50) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Switch custom tap to official homebrew now PR is merged [\#49](https://github.com/AtomLinter/linter-glsl/pull/49) ([andystanton](https://github.com/andystanton))
-- Update dependencies to enable Greenkeeper 🌴 [\#45](https://github.com/AtomLinter/linter-glsl/pull/45) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update dependencies to enable Greenkeeper 🌴 [\#45](https://github.com/AtomLinter/linter-glsl/pull/45) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 **Fixed bugs:**
 
