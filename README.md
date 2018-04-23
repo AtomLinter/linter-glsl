@@ -35,7 +35,7 @@ It also works nicely alongside [autocomplete-glsl](https://atom.io/packages/auto
 | `.vert`    | `.frag`    | `.geom`    | `.tesc`              | `.tese`                 | `.comp`    |
 | `.vs.glsl` | `.fs.glsl` | `.gs.glsl` | `.tc.glsl`           | `.te.glsl`              | `.cs.glsl` |
 | `_vs.glsl` | `_fs.glsl` | `_gs.glsl` | `_tc.glsl`           | `_te.glsl`              | `_cs.glsl` |
-| `.vs`      | `.gs`      | `.gs`      | `.tc`                | `.te`                   | `.cs`      |
+| `.vs`      | `.fs`      | `.gs`      | `.tc`                | `.te`                   | `.cs`      |
 | `.v.glsl`  | `.f.glsl`  | `.g.glsl`  |                      |                         |            |
 | `_v.glsl`  | `_f.glsl`  | `_g.glsl`  |                      |                         |            |
 | `.vsh`     | `.fsh`     | `.gsh`     |                      |                         |            |
