@@ -4,7 +4,7 @@
 import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
 import { join } from 'path';
 
-const { lint } = require('../lib/linter-glsl').provideLinter();
+const { lint, addTransform, removeTransform } = require('../lib/linter-glsl').provideLinter();
 
 const runLint = async (path) => {
   const editor = await atom.workspace.open(path);
@@ -85,6 +85,24 @@ describe('linter-glsl', () => {
     expect(messages[1].type).toEqual('ERROR');
     expect(messages[1].text).toEqual('Missing entry point: Each stage requires one entry point');
   });
+
+  // Transforms
+
+  it('calls transform function', async () => {
+    function transform(path, text) {
+      return text.replace('vec5', 'vec4');
+    }
+
+    const path = join(__dirname, 'fixtures', 'transform', 'sample.frag');
+
+    addTransform(transform);
+    const messagesWith = await runLint(path);
+    expect(messagesWith.length).toEqual(0);
+
+    removeTransform(transform);
+    const messagesWithout = await runLint(path);
+    expect(messagesWithout.length).not.toEqual(0);
+  })
 
   // Vertex shaders
 
