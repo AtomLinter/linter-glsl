@@ -102,7 +102,7 @@ describe('linter-glsl', () => {
     removeTransform(transform);
     const messagesWithout = await runLint(path);
     expect(messagesWithout.length).not.toEqual(0);
-  })
+  });
 
   // Vertex shaders
 
