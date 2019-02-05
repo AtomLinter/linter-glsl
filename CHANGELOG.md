@@ -1,6 +1,21 @@
 # Change Log
 
-## [v2.1.4](https://github.com/AtomLinter/linter-glsl/tree/v2.1.4) (2017-09-14)
+## [v2.2.0](https://github.com/AtomLinter/linter-glsl/tree/v2.2.0) (2019-02-05)
+[Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.4...v2.2.0)
+
+**Implemented enhancements:**
+
+- V2 linter api support [\#82](https://github.com/AtomLinter/linter-glsl/pull/82) ([vzamanillo](https://github.com/vzamanillo))
+- Update atom-package-deps to version 5.0.0 🚀 [\#80](https://github.com/AtomLinter/linter-glsl/pull/80) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
+**Fixed bugs:**
+
+- Support v2 Linter API [\#81](https://github.com/AtomLinter/linter-glsl/issues/81)
+- Migrate CircleCI to a 2.0 configuration [\#73](https://github.com/AtomLinter/linter-glsl/issues/73)
+- Upgrade to CircleCI 2.0 [\#78](https://github.com/AtomLinter/linter-glsl/pull/78) ([Arcanemagus](https://github.com/Arcanemagus))
+- Fixed typo in README.md [\#75](https://github.com/AtomLinter/linter-glsl/pull/75) ([nasso](https://github.com/nasso))
+
+## [v2.1.4](https://github.com/AtomLinter/linter-glsl/tree/v2.1.4) (2017-09-15)
 [Full Changelog](https://github.com/AtomLinter/linter-glsl/compare/v2.1.3...v2.1.4)
 
 **Implemented enhancements:**
