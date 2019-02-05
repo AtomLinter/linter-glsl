@@ -51,6 +51,11 @@
       "node": true
     }
   },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ]
+  },
   "package-deps": [
     "linter:2.0.0"
   ]
