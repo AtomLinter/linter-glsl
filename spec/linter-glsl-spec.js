@@ -14,55 +14,55 @@ const runLint = async (path) => {
 const vsTest = async (fileName) => {
   const messages = await runLint(join(__dirname, 'fixtures', 'vert', fileName));
   expect(messages.length).toEqual(2);
-  expect(messages[0].type).toEqual('ERROR');
-  expect(messages[0].text).toEqual("'main' : illegal use of type 'void'");
-  expect(messages[1].type).toEqual('ERROR');
-  expect(messages[1].text).toEqual("'' : compilation terminated");
+  expect(messages[0].severity).toEqual('error');
+  expect(messages[0].excerpt).toEqual("'main' : illegal use of type 'void'");
+  expect(messages[1].severity).toEqual('error');
+  expect(messages[1].excerpt).toEqual("'' : compilation terminated");
 };
 
 const fsTest = async (fileName) => {
   const messages = await runLint(join(__dirname, 'fixtures', 'frag', fileName));
   expect(messages.length).toEqual(3);
-  expect(messages[0].type).toEqual('ERROR');
-  expect(messages[0].text).toEqual("'vec5' : no matching overloaded function found");
-  expect(messages[1].type).toEqual('ERROR');
-  expect(messages[1].text).toEqual("'assign' :  cannot convert from ' const float' to ' fragColor 4-component vector of float FragColor'");
-  expect(messages[2].type).toEqual('ERROR');
-  expect(messages[2].text).toEqual("'' : compilation terminated");
+  expect(messages[0].severity).toEqual('error');
+  expect(messages[0].excerpt).toEqual("'vec5' : no matching overloaded function found");
+  expect(messages[1].severity).toEqual('error');
+  expect(messages[1].excerpt).toEqual("'assign' :  cannot convert from ' const float' to ' fragColor 4-component vector of float FragColor'");
+  expect(messages[2].severity).toEqual('error');
+  expect(messages[2].excerpt).toEqual("'' : compilation terminated");
 };
 
 const gsTest = async (fileName) => {
   const messages = await runLint(join(__dirname, 'fixtures', 'geom', fileName));
   expect(messages.length).toEqual(2);
-  expect(messages[0].type).toEqual('ERROR');
-  expect(messages[0].text).toEqual("'line_stripp' : unrecognized layout identifier, or qualifier requires assignment (e.g., binding = 4)");
-  expect(messages[1].type).toEqual('ERROR');
-  expect(messages[1].text).toEqual("'' : compilation terminated");
+  expect(messages[0].severity).toEqual('error');
+  expect(messages[0].excerpt).toEqual("'line_stripp' : unrecognized layout identifier, or qualifier requires assignment (e.g., binding = 4)");
+  expect(messages[1].severity).toEqual('error');
+  expect(messages[1].excerpt).toEqual("'' : compilation terminated");
 };
 
 const tcTest = async (fileName) => {
   const messages = await runLint(join(__dirname, 'fixtures', 'tesc', fileName));
   expect(messages.length).toEqual(2);
-  expect(messages[0].type).toEqual('ERROR');
-  expect(messages[0].text).toEqual("'verticaes' : there is no such layout identifier for this stage taking an assigned value");
-  expect(messages[1].type).toEqual('ERROR');
-  expect(messages[1].text).toEqual("'' : compilation terminated");
+  expect(messages[0].severity).toEqual('error');
+  expect(messages[0].excerpt).toEqual("'verticaes' : there is no such layout identifier for this stage taking an assigned value");
+  expect(messages[1].severity).toEqual('error');
+  expect(messages[1].excerpt).toEqual("'' : compilation terminated");
 };
 
 const teTest = async (fileName) => {
   const messages = await runLint(join(__dirname, 'fixtures', 'tese', fileName));
   expect(messages.length).toEqual(1);
-  expect(messages[0].type).toEqual('ERROR');
-  expect(messages[0].text).toEqual("'' :  syntax error, unexpected IDENTIFIER");
+  expect(messages[0].severity).toEqual('error');
+  expect(messages[0].excerpt).toEqual("'' :  syntax error, unexpected IDENTIFIER");
 };
 
 const csTest = async (fileName) => {
   const messages = await runLint(join(__dirname, 'fixtures', 'comp', fileName));
   expect(messages.length).toEqual(2);
-  expect(messages[0].type).toEqual('ERROR');
-  expect(messages[0].text).toEqual("'image variables not declared 'writeonly' and without a format layout qualifier' : not supported for this version or the enabled extensions");
-  expect(messages[1].type).toEqual('ERROR');
-  expect(messages[1].text).toEqual("'compute shaders' : required extension not requested: GL_ARB_compute_shader");
+  expect(messages[0].severity).toEqual('error');
+  expect(messages[0].excerpt).toEqual("'image variables not declared 'writeonly' and without a format layout qualifier' : not supported for this version or the enabled extensions");
+  expect(messages[1].severity).toEqual('error');
+  expect(messages[1].excerpt).toEqual("'compute shaders' : required extension not requested: GL_ARB_compute_shader");
 };
 
 describe('linter-glsl', () => {
@@ -80,10 +80,10 @@ describe('linter-glsl', () => {
     const messages = await lint(editor);
 
     expect(messages.length).toEqual(2);
-    expect(messages[0].type).toEqual('ERROR');
-    expect(messages[0].text).toEqual('Missing entry point: Each stage requires one entry point');
-    expect(messages[1].type).toEqual('ERROR');
-    expect(messages[1].text).toEqual('Missing entry point: Each stage requires one entry point');
+    expect(messages[0].severity).toEqual('error');
+    expect(messages[0].excerpt).toEqual('Missing entry point: Each stage requires one entry point');
+    expect(messages[1].severity).toEqual('error');
+    expect(messages[1].excerpt).toEqual('Missing entry point: Each stage requires one entry point');
   });
 
   // Vertex shaders
